@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "docker_maker"
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ["Brian McCallister"]
   spec.email         = ["brianm@skife.org"]
   spec.description   = "Library for building docker images"
