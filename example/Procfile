@@ -1,0 +1,2 @@
+# SimpleHTTPServer defaults to port 8000
+web:    python -m SimpleHTTPServer
