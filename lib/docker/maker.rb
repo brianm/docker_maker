@@ -123,7 +123,7 @@ class Docker
     end
   end
 
-  def self.build(args)
+  def self.make(args)
     from = args[:from]
     to = args[:to]
     d = Docker.new(from, to)
