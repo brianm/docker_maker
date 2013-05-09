@@ -1,12 +1,10 @@
-# DockerBuilder
-
-TODO: Write a gem description
+# Docker Maker
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'docker_builder'
+    gem 'docker_maker'
 
 And then execute:
 
@@ -14,7 +12,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install docker_builder
+    $ gem install docker_maker
 
 ## Usage
 
