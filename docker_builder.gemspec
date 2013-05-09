@@ -1,16 +1,13 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'docker_builder/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "docker_builder"
-  spec.version       = DockerBuilder::VERSION
+  spec.name          = "docker_maker"
+  spec.version       = '0.0.1'
   spec.authors       = ["Brian McCallister"]
   spec.email         = ["brianm@skife.org"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = "Library for building docker images"
+  spec.summary       = "Library to make it easyto build docker images"
+  spec.homepage      = "http://github.com/brianm/docker_builder/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
