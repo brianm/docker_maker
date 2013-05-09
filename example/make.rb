@@ -6,7 +6,8 @@ require "docker/maker"
 Docker.make(from: "ubuntu:12.10", to: "brianm/buildy") do |b|
   b.maintainer "Brian McCallister <brianm@skife.org>"
   b.env "DEBIAN_FRONTEND" => "noninteractive",
-        "USER" => "xncore"
+        "USER" => "xncore",
+        "PORT" => "8000"
 
   b.bash <<-EOS
     apt-get update
