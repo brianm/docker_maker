@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["brianm@skife.org"]
   spec.description   = "Library for building docker images"
   spec.summary       = "Library to make it easyto build docker images"
-  spec.homepage      = "http://github.com/brianm/docker_builder/"
+  spec.homepage      = "http://github.com/brianm/docker_maker/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
