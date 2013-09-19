@@ -133,9 +133,39 @@ module Docker
     d = Maker.new(from, to)
     yield d
   end
-  
+
+  class Recorder
+
+    def initialize(subject)
+      @subject = subject
+      @calls = []
+    end
+
+    def method_missing(sym, *args)
+      @calls << [sym, args]
+    end
+
+    def make
+      @calls.each do |sym, args|
+        @subject.send sym, args
+      end
+    end
+
+  end
+
+  def self.prepare(args)
+    from = args[:from]
+    to = args[:to]
+    d = Maker.new(from, to)
+    r = Recorder.new d
+    if block_given?
+      yield r
+    end
+    return r
+  end
+
   Image = Struct.new :repo, :tag, :id, :created
-  
+
   def self.images path="/usr/bin/docker"
     `#{path} images | tail -n +2`.split(/\n/).inject([]) do |a, line|
       repo, tag, id, created = line.split(/\s\s+/)
