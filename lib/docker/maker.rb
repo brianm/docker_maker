@@ -136,8 +136,9 @@ module Docker
 
   class Recorder
 
-    def initialize(subject)
-      @subject = subject
+    def initialize(args)
+      @from = args[:from]
+      @to = args[:to]
       @calls = []
     end
 
@@ -146,18 +147,16 @@ module Docker
     end
 
     def make
+      m = Maker.new(@from, @to)
       @calls.each do |sym, args|
-        @subject.send sym, args
+        m.send sym, *args
       end
     end
 
   end
 
   def self.prepare(args)
-    from = args[:from]
-    to = args[:to]
-    d = Maker.new(from, to)
-    r = Recorder.new d
+    r = Recorder.new args
     if block_given?
       yield r
     end
